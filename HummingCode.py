@@ -1,4 +1,10 @@
+from playsound import playsound
+import tkinter as tk
+from Sounds import *
+
+
 cv =[]
+
 
 class Aves():
 
@@ -38,6 +44,27 @@ class Trochilidae(Aves):
 		self.species = 361
 		self.genera = 113
 
+	def singing(self):
+		playsound(sg)
+
+	def Ventana(self):
+		raiz = tk.Tk()
+		raiz.title("IDIOMS CODE")
+		marcoPresnt = tk.Frame(raiz)
+		marcoPresnt.pack()
+		ph = tk.PhotoImage(file="Amazilia_tzacatl.png")
+		Presentacion = tk.Label(marcoPresnt, image=ph)
+		Presentacion.pack()
+		singBoton = tk.Button(marcoPresnt, text="Bird singing", font = ("Comic Sans MS", 11), command=lambda:self.singing())
+		singBoton.config(fg="blue")
+		singBoton.pack()
+		raiz.mainloop()
+
+	def Description(self):
+		print('Heart chambers: ', self.heartChamber)
+
+	
+
 
 class Tinamidae(Aves):
 
@@ -51,13 +78,13 @@ class Tinamidae(Aves):
 		self.tail = 'Short'
 
 
-hum = Trochilidae('Short', 'Tin')
+# hum = Trochilidae('Short', 'Tin')
 
-print(Tin.fly)
-print(Tin.heartChamber)
-print(Tin.tail)
-print(Tin.antiquity)
-print(Tin.vernacularNames)
+# print(Tin.fly)
+# print(Tin.heartChamber)
+# print(Tin.tail)
+# print(Tin.antiquity)
+# print(Tin.vernacularNames)
 
 
 
